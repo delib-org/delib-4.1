@@ -1,9 +1,18 @@
-import React from 'react';
+import {useEffect} from 'react'
+
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 
+//firebase
+import {listenToUserLogin} from './db/userDB'
+
+
 function App() {
+
+  useEffect(()=>{
+    listenToUserLogin();
+  },[])
   return (
     <div className="App">
       <header className="App-header">
